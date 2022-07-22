@@ -13,21 +13,46 @@
     </style>
     <title>Cabcab</title>
 </head>
-<body style="background-color: #F5F0BB;">
+<body style="background-color: #2C3639;">
     
-    <div class="modal-fullscreen">
-        <div class="menu border w-25 d-flex flex-column p-3" style="height: 100vh; background-color: #C4DFAA;">
-            <div class="close-button fs-4 text-end">X</div>
-            <div class="title fs-1 text-center my-3 border" style="background-color: #90C8AC;">Cabcab</div>
+    <div class="modal-fullscreen d-flex">
+        <div id="menu" class="col-xs-12 col-lg-3 d-flex flex-column p-3 bg-white" style="height: 100vh;">
+            <div class="close-button text-end">
+                <span class="fs-5 border border-dark border-2 bg-dark text-white" id="close-button" style="cursor: pointer;">close</span>
+            </div>
+            <div class="title fs-1 text-center my-3 bg-dark text-white">Cabcab</div>
             <div class="option-menu">
                 <label class="my-3">
                     <input type="checkbox"> remove
                 </label>
-                <textarea class="form-control" placeholder="write vocab" rows="20" style="resize: none;"></textarea>
+                <textarea class="form-control bg-dark text-white" placeholder="write vocab" rows="20" style="resize: none;"></textarea>
             </div>
         </div>
+
+        <div class="col-4 mx-auto">
+            <div class="bg-warning pe-2 rounded shadow-sm">
+                <div class="show-word my-5 border bg-white col-12 mx-auto text-center p-5" style="font-size: 7rem;">word</div>
+            </div>
+
+            <div class="bg-warning pe-2 rounded shadow-sm">
+                <div class="mx-auto col-12 text-center bg-white p-4" style="margin-top: 13rem;">
+                    <div class="d-flex justify-content-between mb-5">
+                         <div class="fs-3 col-1" id="setting-button" style="cursor: pointer;">
+                            <img src="./images/setting.png" alt="">
+                         </div>
+                         <div>
+                             <label class="fs-3">vocab total:</label> <span class="total-words fs-3">0</span>
+                         </div>
+                    </div>
+     
+                     <button class="btn btn-danger d-block mx-auto w-100 mt-3 p-3 fs-1">spin</button>
+                 </div>
+            </div>
+        </div>
+
     </div>
 
+<script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </body>
