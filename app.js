@@ -4,11 +4,15 @@ const spinButton = document.querySelector('#spin-button');
 const wordsInput = document.querySelector('#words-input');
 const wordShow = document.querySelector('#word-show');
 const menu = document.querySelector('#menu');
+const wordsCount = document.querySelector('#words-count'); 
 
 const listToSpin = () => {
     const list = wordsInput.value.replace(/\s+/g, '/')
     const wordArray = list.split('/');
-    return wordArray;
+    if (wordArray != '') {
+        return wordArray
+    }
+    return 0;
 }
 
 const spin = () => {
@@ -26,8 +30,13 @@ const randomWord = (wordArr, isDelete) => {
     }
 }
 
+const wordsCounter = () => {
+    wordsCount.innerHTML = listToSpin().length ? listToSpin().length : '0';
+}
+
 spinButton.addEventListener('click', () => {
     spin()
+    wordsCounter()
 })
 
 closeButton.addEventListener('click', () => {
