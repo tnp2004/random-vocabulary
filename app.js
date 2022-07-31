@@ -30,8 +30,16 @@ const randomWord = (wordArr, isDelete) => {
     }
 }
 
+const spinCounter = () => {
+    const spinCount = document.getElementById('spin-count');
+    spinCount.innerHTML = Number(spinCount.innerHTML) + 1;
+}
+
 const wordsCounter = () => {
     wordsCount.innerHTML = listToSpin().length ? listToSpin().length : '0';
+    if (wordsCount.innerHTML != '0' && wordsCount.innerHTML) {
+        spinCounter()
+    }
 }
 
 spinButton.addEventListener('click', () => {
